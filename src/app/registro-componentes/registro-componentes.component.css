@@ -1,0 +1,31 @@
+table{
+    padding: 30px;
+}
+tr{
+    text-align: center;
+    height: 50px;
+}
+td{
+    width: 1%;
+}
+.titulo{
+    background-color: brown;
+    border-style: solid;
+}
+.item{
+    background-color: wheat;
+}
+/* abajo la info */
+.datos{
+    margin-left: 25%;
+    padding: 30px;
+    width: 25%;
+    background-color: cornflowerblue;
+}
+.datos button{
+    text-align: center;
+    display: inline-flex;
+    margin-left: 20%;
+    border-radius: 10%;
+    height: 30px;
+}

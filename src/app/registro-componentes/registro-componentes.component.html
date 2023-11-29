@@ -1,0 +1,48 @@
+
+
+<table *ngIf="hayRegistros();else divVacio">
+    <tr>
+        <td class="titulo"><h2>COD.PACIENTE</h2></td>
+        <td class="titulo"><h2>NOMBRE</h2></td>
+        <td class="titulo"><h2>PATERNO</h2></td>
+        <td class="titulo"><h2>MATERNO</h2></td>
+        <td class="titulo"><h2>TUTOR</h2></td>
+        <td class="titulo"><h2>EDAD</h2></td>
+        <td class="titulo"><h2>INTERNADO</h2></td>
+        <td class="titulo"><h2>FECHA INGRESO</h2></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr *ngFor="let pacx of datosPacientes">
+        <td class="item">{{pacx.codigoP}}</td>
+        <td class="item">{{pacx.nombre}}</td>
+        <td class="item">{{pacx.paterno}}</td>
+        <td class="item">{{pacx.materno}}</td>
+        <td class="item">{{pacx.tutor}}</td>
+        <td class="item">{{pacx.edad}}</td>
+        <td class="item">{{pacx.areaInternada}}</td>
+        <td class="item">{{pacx.fechaIngreso}}</td>
+        <td><button (click)="seleccionar(pacx)">Seleccionar</button></td>
+        <td><button (click)="borrar(pacx.codigoP)">Borrar</button></td>
+    </tr>
+</table>
+<!-- mensajes sin pac -->
+<ng-template #divVacio>
+    <h1>NO EXISTEN PACIENTES EN LA TABLA</h1>
+</ng-template>
+<!-- MOSTRAR DATOS -->
+    <div class="datos">
+        <p>Codigo:<input type="number" [(ngModel)]='paciente.codigoP'/></p>
+        <p>Nombre:<input type="text" [(ngModel)]='paciente.nombre'/></p>
+        <p>Paterno:<input type="text" [(ngModel)]='paciente.paterno'/></p>
+        <p>Materno:<input type="text" [(ngModel)]='paciente.materno'/></p>
+        <p>Edad:<input type="number" [(ngModel)]='paciente.edad'/></p>
+        <p>Area Internada:<input type="text" [(ngModel)]='paciente.areaInternada'/></p>
+        <p>Fecha Ingreso:<input type="text" [(ngModel)]='paciente.fechaIngreso'/></p>        
+        <button (click)="agregar()">Agregar</button> 
+        <button (click)="modificar()">Modificar</button>
+    </div>
+
+
+
+
